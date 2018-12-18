@@ -1,0 +1,29 @@
+page-main {
+        .cen {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }    
+            .cenT {
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }    
+            .c1 {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                border: 5px solid map-get($colors,primary);
+            }
+            .c2 {
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                background:  map-get($colors,primary);
+            }
+        
+}
