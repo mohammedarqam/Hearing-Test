@@ -8,11 +8,30 @@
 
 <ion-content padding>
 
-  <img src="assets/imgs/left.png" class="cir" />
+
+<ion-slides>
+  <ion-slide>
 
 
-<ion-footer text-center >
-  <button ion-button round (click)="start()">Start Test</button>
-  <button ion-button round (click)="stop()">Stop Test</button>
-</ion-footer>
+  <img src="assets/imgs/head.png" class="cir"/>
+
+
+
+
+  <ion-item>
+    <ion-label>Frequency {{freq}} </ion-label>
+    <ion-range min="100" max="1500" (ionChange)="changeFre()" step="50" [(ngModel)]="freq">
+      <ion-icon small range-left name="minus"></ion-icon>
+      <ion-icon range-right name="add"></ion-icon>
+    </ion-range>
+  </ion-item>
+
+
+</ion-slide>
+</ion-slides>
+
+  <ion-footer text-center>
+    <button ion-button round (click)="start()">Start Test</button>
+    <button ion-button round (click)="stop()">Stop Test</button>
+  </ion-footer>
 </ion-content>

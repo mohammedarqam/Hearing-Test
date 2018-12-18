@@ -7,34 +7,39 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  frequency: number = 440.0;
-  context = new AudioContext();
-  o = this.context.createOscillator();
+  freq = 100;
+  ozcontext =new AudioContext();
+  oz = this.ozcontext.createOscillator();
+  gainNode = this.ozcontext.createGain();
 
   
   constructor(
     public navCtrl: NavController,
   ) {
-    this.o.type = "sine";
-    this.o.frequency.value = this.frequency;
-    this.o.connect(this.context.destination);
+    this.changeFre();
   }
+
+
+
+
+
+
+
+  changeFre(){
+    this.oz.connect(this.gainNode);
+    this.gainNode.connect(this.ozcontext.destination);
+    this.gainNode.gain.value = 0.1;
+    this.oz.type = 'sine';
+    this.oz.frequency.value = this.freq;
+  }  
   
-  
-
-
-
-
-
 
   start(){
-    this.o.start();
-    console.log("Started")
+    this.oz.start();
 
   }
   stop(){
-    this.o.stop();
-    console.log("Started")
+    this.oz.stop();
 
   }
 
