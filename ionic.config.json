@@ -1,5 +1,7 @@
 {
   "name": "HearingTest",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
